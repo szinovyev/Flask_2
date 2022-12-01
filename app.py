@@ -22,6 +22,7 @@ def inp_transform(val_dict):
     s = pd.DataFrame(dict(data_f.iloc[-1]), columns = data_f.columns, index = [0])
     return s
 
+
 @app.route('/')
 def home():
     return render_template('main.html')
