@@ -38,5 +38,5 @@ def predict():
         return render_template('main.html', y_pred = y_pred)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run()
 
