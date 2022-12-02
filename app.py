@@ -35,7 +35,7 @@ def predict():
         s_row = inp_transform(flask.request.form.to_dict())
         y_pred = loaded_model.predict(s_row)
         y_pred = int(y_pred)
-        return render_template('main.html', y_pred = y_pred)
+        return render_template('main.html', y_pred = f'{y_pred:,} \u20BD')
 
 if __name__ == "__main__":
     app.run()

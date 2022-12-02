@@ -17,34 +17,34 @@
 
 <body>
 
-    <h1 align="center">Рассчитайте цену Вашей квартиры</h1>
+    <h1 style="text-align: center;font-family: Tahoma">Рассчитайте цену Вашей квартиры</h1>
 
 <div>
-  <form style='border: 2px solid #37ff00;width:50%;margin:0 auto;text-align:center;font-family: Helvetica'
+  <form style='border: 2px solid #37ff00;width:50%;margin:0 auto;text-align:center;font-family: Tahoma '
           action="{{url_for('predict')}}" method="POST">
     <label for="Total_area">Общая площадь</label>
-    <input type="float" id="Total_area" name="Total_area" size ="15">btw:[0-999]
+    <input type="float" id="Total_area" name="Total_area" size ="15" required>btw:[0-999]
     <br>
     <label for="Kitchen_area">Площадь кухни</label>
-    <input type="float" id="Kitchen_area" name="Kitchen_area" size ="15">btw:[0-999]
+    <input type="float" id="Kitchen_area" name="Kitchen_area" size ="15" required>btw:[0-999]
     <br>
     <label for="Living_area">Жилая площадь</label>
-    <input type="float" id="Living_area" name="Living_area" size ="15">btw:[0-999]
+    <input type="float" id="Living_area" name="Living_area" size ="15" required>btw:[0-999]
     <br>
     <label for="House_age">Возраст дома</label>
-    <input type="float" id="House_age" name="House_age" size ="15">btw:[0-999]
+    <input type="float" id="House_age" name="House_age" size ="15" required>btw:[0-999]
     <br>
     <label for="Time_to_metro">Время до метро (мин)</label>
-    <input type="float" id="Time_to_metro" name="Time_to_metro" size ="15">btw:[0-999]
+    <input type="float" id="Time_to_metro" name="Time_to_metro" size ="15" required>btw:[0-999]
     <br>
     <label for="Total_floors">Всего этажей в доме</label>
-    <input type="float" id="Total_floors" name="Total_floors" size ="15">btw:[0-999]
+    <input type="float" id="Total_floors" name="Total_floors" size ="15" required>btw:[0-999]
     <br>
     <label for="Floor">Этаж</label>
-    <input type="float" id="Floor" name="Floor" size ="15">btw:[0-999]
+    <input type="float" id="Floor" name="Floor" size ="15" required>btw:[0-999]
     <br>
     <label for="N_rooms">Количество комнат</label>
-    <select id="N_rooms" name="N_rooms">
+    <select id="N_rooms" name="N_rooms" required>
       <option value=" студия"> студия</option>
       <option value=" 1"> 1</option>
       <option value=" 2"> 2</option>
@@ -53,7 +53,7 @@
     </select>
     <br>
     <label for="Repairs">Ремонт</label>
-    <select id="Repairs" name="Repairs" >
+    <select id="Repairs" name="Repairs" required>
       <option value=" евро"> евро</option>
       <option value=" дизайнерский"> дизайнерский</option>
       <option value=" косметический"> косметический</option>
@@ -61,7 +61,7 @@
     </select>
     <br>
     <label for="House_type">Тип дома</label>
-    <select id="House_type" name="House_type" >
+    <select id="House_type" name="House_type" required>
       <option value=" панельный"> панельный</option>
       <option value=" монолитно-кирпичный"> монолитно-кирпичный</option>
       <option value=" монолитный"> монолитный</option>
@@ -71,7 +71,7 @@
     </select>
     <br>
     <label for="District">Район</label>
-    <select id="District" name="District">
+    <select id="District" name="District" required>
       <option value="Калининский">Калининский</option>
       <option value="Приморский">Приморский</option>
       <option value="Выборгский">Выборгский</option>
@@ -95,8 +95,7 @@
     <br>
     <button type = 'submit'>Ориентировочная цена</button>
   </form>
-    <h3> {{ y_pred }}</h3>
-
+    <h3 style="text-align: center;font-family: Tahoma ;font-size: xx-large">{{ y_pred }}</h3>
 </div>
 </div>
 </body>
